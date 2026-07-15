@@ -7,7 +7,31 @@ style:
 overflow:
     mode: scroll
     indicator: ›
-groups: []
+groups:
+    - name: AI
+      pattern: ^AI\|
+      theme:
+        bg: '#1e1e2e'
+        fg: '#cdd6f4'
+        active_bg: '#B0201E'
+        active_fg: '#ffffff'
+        inactive_bg: ""
+        inactive_fg: ""
+        icon: ""
+        active_indicator_bg: ""
+      working_dir: ""
+    - name: Default
+      pattern: .*
+      theme:
+        bg: '#1e1e2e'
+        fg: '#d4c4b0'
+        active_bg: '#B0201E'
+        active_fg: '#d4af37'
+        inactive_bg: ""
+        inactive_fg: ""
+        icon: ""
+        active_indicator_bg: ""
+      working_dir: ""
 bindings:
     toggle_sidebar: ""
     next_tab: ""
@@ -37,7 +61,7 @@ sidebar:
     new_tab_button: false
     close_button: false
     new_group_button: false
-    show_empty_groups: true
+    show_empty_groups: false
     sort_by: group
     debug: false
     line_height: 0
@@ -59,11 +83,6 @@ sidebar:
         active_indicator: ""
         active_indicator_frames:
             - ▶
-            - ▶
-            - ▶
-            - ▶
-            - ▶
-            - ' '
         active_indicator_fg: ""
         active_indicator_bg: ""
         tree_fg: ""

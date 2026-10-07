@@ -59,7 +59,7 @@ EOF
 
 # 4. このリポジトリをクローン
 mkdir -p ~/Documents/Github
-git clone git@github.com:Papillon6814/dotfiles ~/Documents/Github/dotfiles
+git clone git@github.com:KendrickMalar/dotfiles ~/Documents/Github/dotfiles
 
 # 5. 反映前にプレビュー
 chezmoi diff
@@ -75,7 +75,7 @@ dotfiles の `settings.json` で参照しているパッケージ:
 ```bash
 # pi 関連
 git clone --recurse-submodules https://github.com/noahsaso/my-pi ~/.my-pi
-git clone git@github.com:Papillon6814/pi-claude-auth ~/Documents/Github/pi-claude-auth
+git clone git@github.com:KendrickMalar/pi-claude-auth ~/Documents/Github/pi-claude-auth
 cd ~/Documents/Github/pi-claude-auth && npm install
 ```
 

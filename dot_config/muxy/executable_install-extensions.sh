@@ -3,7 +3,7 @@
 set -eu
 REPO="$HOME/Code/muxy-herdr-agent-status"
 if [ ! -d "$REPO/.git" ]; then
-  gh repo clone Papillon6814/muxy-herdr-agent-status "$REPO"
+  gh repo clone KendrickMalar/muxy-herdr-agent-status "$REPO"
 fi
 (cd "$REPO" && npm run build)
 cat <<'MSG'

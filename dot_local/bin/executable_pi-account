@@ -13,8 +13,16 @@ case "$name" in
   *) echo "usage: pi-account <muu|rbx|kuno> [args...]" >&2; exit 2 ;;
 esac
 
+launch_pi() {
+  if [[ "${PI_PROFILE_LAUNCHER:-1}" == "0" ]]; then
+    exec pi "$@"
+  fi
+  command -v pi-profile >/dev/null 2>&1 || { echo 'pi-account: pi-profile launcher is missing; use PI_PROFILE_LAUNCHER=0 for the old path' >&2; exit 127; }
+  exec pi-profile launch -- "$@"
+}
+
 pi-extension-deps-patch
-[[ "$name" == "kuno" ]] && exec pi "$@"
+[[ "$name" == "kuno" ]] && launch_pi "$@"
 
 pi-hermes-realpath-patch || true
 
@@ -44,4 +52,5 @@ for dst in "$dir"/*; do
   [[ -L "$dst" && ! -e "$dst" ]] && rm "$dst"
 done
 
-PI_CODING_AGENT_DIR="$dir" exec pi "$@"
+export PI_CODING_AGENT_DIR="$dir"
+launch_pi "$@"

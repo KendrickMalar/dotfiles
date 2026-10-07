@@ -15,8 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papillon6814/dotfiles.git",
+    "url": "https://github.com/KendrickMalar/dotfiles.git",
     "directory": "npm/ai-init"
   },
-  "homepage": "https://github.com/Papillon6814/dotfiles/tree/main/npm/ai-init"
+  "homepage": "https://github.com/KendrickMalar/dotfiles/tree/main/npm/ai-init"
 }

@@ -21,4 +21,23 @@ class AccountLauncher(unittest.TestCase):
      self.assertEqual(calls[1:],["--model","value with space","--","日本語"] if bypass else ["launch","--","--model","value with space","--","日本語"])
      used=(root/"agent-used").read_text()
      self.assertEqual(used,"" if account=="kuno" else str(root/(".pi/agent-"+account)))
+ def test_profile_local_state_is_not_linked_or_warned(self):
+  for account in ("muu","rbx"):
+   with self.subTest(account=account), tempfile.TemporaryDirectory(prefix="account-state-") as directory:
+    root=pathlib.Path(directory);bin=root/"bin";bin.mkdir();agent=root/".pi/agent";profile=root/(".pi/agent-"+account)
+    for base in (agent,profile):(base/"sessions").mkdir(parents=True);(base/"pi-subagents").mkdir();(base/"models-store.json").write_text("{}")
+    (agent/"settings.json").write_text("{}")
+    for name in ("pi","pi-profile","pi-extension-deps-patch","pi-hermes-realpath-patch"):
+     file=bin/name;file.write_text("#!/bin/sh\nexit 0\n");file.chmod(0o755)
+    result=subprocess.run(["bash",str(SCRIPT),account],env={"HOME":str(root),"PATH":str(bin)+":/usr/bin:/bin"},capture_output=True,text=True)
+    self.assertEqual(result.returncode,0,result.stderr)
+    self.assertEqual(result.stderr,"")
+    self.assertTrue((profile/"settings.json").is_symlink())
+    for base in ("sessions","pi-subagents","models-store.json"):self.assertFalse((profile/base).is_symlink(),base)
+   with self.subTest(account=account,fresh=True), tempfile.TemporaryDirectory(prefix="account-fresh-") as directory:
+    root=pathlib.Path(directory);bin=root/"bin";bin.mkdir();agent=root/".pi/agent";(agent/"sessions").mkdir(parents=True);(agent/"settings.json").write_text("{}")
+    for name in ("pi","pi-profile","pi-extension-deps-patch","pi-hermes-realpath-patch"):
+     file=bin/name;file.write_text("#!/bin/sh\nexit 0\n");file.chmod(0o755)
+    subprocess.run(["bash",str(SCRIPT),account],env={"HOME":str(root),"PATH":str(bin)+":/usr/bin:/bin"},check=True)
+    self.assertFalse((root/(".pi/agent-"+account)/"sessions").exists())
 if __name__=="__main__":unittest.main()

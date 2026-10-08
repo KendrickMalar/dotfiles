@@ -1,0 +1,160 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-03-12T15:04:22.371Z",
+      "updatedAt": "2026-03-12T15:04:22.371Z"
+    },
+    "roblox-game-development": {
+      "source": "greedychipmunk/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greedychipmunk/agent-skills.git",
+      "skillPath": "roblox-game-developer/SKILL.md",
+      "skillFolderHash": "7778d2b71efaeba42b981e89709e84b13654c2a8",
+      "installedAt": "2026-03-12T15:05:58.670Z",
+      "updatedAt": "2026-03-12T15:05:58.670Z"
+    },
+    "writing-plans": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/writing-plans/SKILL.md",
+      "skillFolderHash": "8fe8e8b6ee9e5cbe53cb172a36f0dc31f9875847",
+      "installedAt": "2026-06-06T17:09:47.884Z",
+      "updatedAt": "2026-06-06T17:09:47.884Z"
+    },
+    "using-git-worktrees": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/using-git-worktrees/SKILL.md",
+      "skillFolderHash": "13a9643fb9e4b236173f7d4b56b15dac10394f1b",
+      "installedAt": "2026-06-06T17:09:56.806Z",
+      "updatedAt": "2026-06-06T17:09:56.806Z"
+    },
+    "subagent-driven-development": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/subagent-driven-development/SKILL.md",
+      "skillFolderHash": "73b43347c1bdc10f6ab81a5cdb036dd1c8098cc0",
+      "installedAt": "2026-06-06T17:16:57.337Z",
+      "updatedAt": "2026-06-06T17:16:57.337Z"
+    },
+    "humanize": {
+      "source": "humanizerai/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/humanizerai/agent-skills.git",
+      "skillPath": "skills/humanize/SKILL.md",
+      "skillFolderHash": "6f6fc915df2cd736af291f729410b08dcd9d9799",
+      "installedAt": "2026-06-23T04:14:09.065Z",
+      "updatedAt": "2026-06-23T04:14:09.065Z"
+    },
+    "humanizer": {
+      "source": "blader/humanizer",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/blader/humanizer.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "9600f2b7241cb4eed6ad803abee5ea01d67fe8e4",
+      "installedAt": "2026-06-23T04:27:04.676Z",
+      "updatedAt": "2026-06-23T04:27:04.676Z"
+    },
+    "quiz-maker": {
+      "source": "onewave-ai/claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/onewave-ai/claude-skills.git",
+      "skillPath": "quiz-maker/SKILL.md",
+      "skillFolderHash": "ddeefac5bbcf44c962118897a6600152c5208114",
+      "installedAt": "2026-06-26T05:23:58.185Z",
+      "updatedAt": "2026-06-26T05:23:58.185Z"
+    },
+    "herdr": {
+      "source": "ogulcancelik/herdr",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ogulcancelik/herdr.git",
+      "skillPath": "skills/herdr/SKILL.md",
+      "skillFolderHash": "6985a5e8418d43171c45c2a9e04b02de7308e1d8",
+      "installedAt": "2026-09-21T15:01:19.366Z",
+      "updatedAt": "2026-09-21T15:01:19.366Z"
+    },
+    "muxy-cli": {
+      "source": "muxy-app/muxy",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/muxy-app/muxy.git",
+      "ref": "main",
+      "skillPath": "Muxy/Resources/skills/muxy-cli/SKILL.md",
+      "skillFolderHash": "0b7cb7e63183a35c6205d0f22aae80a18fdcd527",
+      "installedAt": "2026-09-21T16:38:17.312Z",
+      "updatedAt": "2026-09-21T16:38:17.312Z"
+    },
+    "muxy-extension": {
+      "source": "muxy-app/muxy",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/muxy-app/muxy.git",
+      "ref": "main",
+      "skillPath": "Muxy/Resources/skills/muxy-extension/SKILL.md",
+      "skillFolderHash": "850b0551a01f21c445aa2c5f7199bcb480d6b74c",
+      "installedAt": "2026-09-21T16:38:19.981Z",
+      "updatedAt": "2026-09-21T16:38:19.981Z"
+    },
+    "design-critique": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins.git",
+      "skillPath": "design/skills/design-critique/SKILL.md",
+      "skillFolderHash": "7c246346e4e343637cc9a805df5ed87d34f74913",
+      "installedAt": "2026-09-22T10:45:49.253Z",
+      "updatedAt": "2026-09-22T10:45:49.253Z"
+    },
+    "nielsen-usability-heuristics": {
+      "source": "dembrandt/dembrandt-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dembrandt/dembrandt-skills.git",
+      "skillPath": "skills/nielsen-usability-heuristics/SKILL.md",
+      "skillFolderHash": "cf1ea6c63b0636c173ad9c2767df2d672d454650",
+      "installedAt": "2026-09-22T10:45:52.099Z",
+      "updatedAt": "2026-09-22T10:45:52.099Z"
+    },
+    "accessibility": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/addyosmani/web-quality-skills.git",
+      "skillPath": "skills/accessibility/SKILL.md",
+      "skillFolderHash": "90b7b38a892c625d19408df411e46cca7ff3819d",
+      "installedAt": "2026-09-22T10:45:54.196Z",
+      "updatedAt": "2026-09-22T10:45:54.196Z"
+    },
+    "design-review": {
+      "source": "nexu-io/open-design",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/nexu-io/open-design.git",
+      "skillPath": "skills/design-review/SKILL.md",
+      "skillFolderHash": "bfb470c8dc170f9a2362d78caa19ae8b12067c9f",
+      "installedAt": "2026-09-22T10:46:14.323Z",
+      "updatedAt": "2026-09-22T10:46:14.323Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "droid",
+    "gemini-cli",
+    "github-copilot",
+    "kilo",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code"
+  ]
+}

@@ -5,7 +5,7 @@
   "defaultTools": [
     "+codemode"
   ],
-  "lastChangelogVersion": "1.0.4",
+  "lastChangelogVersion": "1.1.0",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-luna",
   "packages": [
@@ -15,7 +15,7 @@
     "git:github.com/pasky/chrome-cdp-skill@v1.0.1",
     "git:github.com/leblancfg/pi-ansi-themes",
     "npm:pi-poly-notify",
-    "/Users/papillon/Documents/Github/pi-plan-mode",
+    "{{ .chezmoi.homeDir }}/Documents/Github/pi-plan-mode",
     {
       "source": "~/.my-pi",
       "extensions": [
@@ -26,7 +26,6 @@
     {
       "source": "~/Documents/Github/pi-profile"
     },
-    "../../Documents/Github/pi-claude-auth",
     "npm:pi-hermes-memory",
     "npm:pi-hashline-edit-pro",
     "npm:pi-lens",
@@ -40,7 +39,11 @@
     "npm:@georgedong32/pi-review",
     "npm:pi-claude-marketplace",
     "npm:@giuseppe.trisciuoglio/pi-rules",
-    "git:github.com/danecando/pi-codex-computer-use@3b00bd4829ccdb0b9797b4101743dd9e883b4e7d",
+    {
+      "source": "git:github.com/danecando/pi-codex-computer-use@3b00bd4829ccdb0b9797b4101743dd9e883b4e7d",
+      "extensions": [],
+      "skills": []
+    },
     {
       "source": "npm:pi-deep-research@0.4.1",
       "extensions": [],
@@ -48,15 +51,16 @@
       "prompts": []
     },
     "pi-deep-research-exa",
-    "git:github.com/obra/superpowers@v6.4.2"
+    "git:github.com/obra/superpowers@v6.4.2",
+    "npm:@injaneity/pi-computer-use@0.5.1"
   ],
   "skills": [
-    "!/Users/papillon/.agents/skills/using-git-worktrees/SKILL.md",
-    "!/Users/papillon/.agents/skills/writing-plans/SKILL.md",
-    "!/Users/papillon/.agents/skills/subagent-driven-development/SKILL.md",
-    "!/Users/papillon/.pi/agent*/skills/using-git-worktrees/SKILL.md",
-    "!/Users/papillon/.pi/agent*/skills/writing-plans/SKILL.md",
-    "!/Users/papillon/.pi/agent*/skills/subagent-driven-development/SKILL.md"
+    "!{{ .chezmoi.homeDir }}/.agents/skills/using-git-worktrees/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.agents/skills/writing-plans/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.agents/skills/subagent-driven-development/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/using-git-worktrees/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/writing-plans/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/subagent-driven-development/SKILL.md"
   ],
   "compaction": {
     "enabled": true,

@@ -37,6 +37,10 @@ npm
 .pi/agent/sessions
 .pi/agent/git
 .pi/history
+# pi: mcp.json は MacBook でだけ管理する（Mac mini は Gmail / Roblox_Studio / zvec_grep をローカルで変更済み）
+{{ if ne .chezmoi.hostname "Soichiros-MacBook-Pro" }}
+.pi/agent/mcp.json
+{{ end }}
 # pi: per-machine auth (log in separately on each machine)
 .pi/agent/mcp-auth.json
 .pi/agent-*/auth.json

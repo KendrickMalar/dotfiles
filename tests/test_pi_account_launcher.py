@@ -25,7 +25,7 @@ class AccountLauncher(unittest.TestCase):
   for account in ("muu","rbx"):
    with self.subTest(account=account), tempfile.TemporaryDirectory(prefix="account-state-") as directory:
     root=pathlib.Path(directory);bin=root/"bin";bin.mkdir();agent=root/".pi/agent";profile=root/(".pi/agent-"+account)
-    local=("sessions","pi-subagents","missions","mcp-home","models-store.json","mcp-auth.json")
+    local=("sessions","pi-subagents","missions","mcp-home","models-store.json","mcp-auth.json","cache")
     for base in (agent,profile):
      base.mkdir(parents=True)
      for name in local:(base/name).write_text("{}") if name.endswith(".json") else (base/name).mkdir()

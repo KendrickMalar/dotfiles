@@ -36,7 +36,7 @@ for src in "$master"/*; do
   case "$base" in
     auth.json|mcp-cache.json|mcp-npx-cache.json|mcp-project-approvals.json) continue ;;
     # 会話履歴・モデル一覧キャッシュ・subagent/mission 状態・MCP の認証と HOME はプロファイルごとに分ける
-    sessions|models-store.json|pi-subagents|missions|mcp-auth.json|mcp-home) continue ;;
+    sessions|models-store.json|pi-subagents|missions|mcp-auth.json|mcp-home|cache) continue ;;
   esac
   dst="$dir/$base"
   if [[ -L "$dst" ]]; then

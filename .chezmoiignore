@@ -59,7 +59,6 @@ npm
 .pi/agent/instruction-backups
 .pi/agent/npm
 .pi/agent/missions
-.pi/agent/profiles
 .pi/agent/worktrees
 .pi/agent/pi-subagents
 .pi/agent/pi-hermes-memory

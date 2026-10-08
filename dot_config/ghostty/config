@@ -95,3 +95,8 @@ clipboard-paste-protection = false
 clipboard-paste-bracketed-safe = true
 
 desktop-notifications = true
+
+# BEGIN herdr-agent-quota font
+font-codepoint-map = U+E1A0-U+E1B6="Herdr Agent Icons Max"
+font-codepoint-map = U+E1C0-U+E1C5="Herdr Agent Icons Max"
+# END herdr-agent-quota font

@@ -1,29 +1,5 @@
 {
-  "settings": {
-    "toolPrefix": "server",
-    "idleTimeout": 10
-  },
   "mcpServers": {
-    "serena": {
-      "command": "/Users/papillon/.local/bin/serena",
-      "args": [
-        "start-mcp-server"
-      ],
-      "lifecycle": "lazy",
-      "directTools": [
-        "activate_project",
-        "initial_instructions",
-        "find_symbol",
-        "find_referencing_symbols",
-        "get_symbols_overview",
-        "rename_symbol",
-        "replace_symbol_body",
-        "insert_before_symbol",
-        "insert_after_symbol",
-        "list_memories",
-        "read_memory"
-      ]
-    },
     "codemogger": {
       "command": "npx",
       "args": [
@@ -31,25 +7,14 @@
         "codemogger",
         "mcp"
       ],
-      "lifecycle": "lazy"
-    },
-    "notion_local": {
-      "command": "node",
-      "args": [
-        "/Users/papillon/Documents/Github/mcp-notion-server/notion/build/index.js"
-      ],
-      "lifecycle": "lazy",
-      "debug": true,
-      "env": {
-        "NOTION_API_TOKEN": "{{ onepasswordRead "op://Personal/Notion API Token/credential" }}"
-      }
+      "exposure": "codemode"
     },
     "Roblox_Studio": {
       "command": "/Applications/RobloxStudioMCP.app/Contents/MacOS/rbx-studio-mcp",
       "args": [
         "--stdio"
       ],
-      "lifecycle": "lazy"
+      "exposure": "codemode"
     },
     "exa": {
       "command": "npx",
@@ -58,7 +23,82 @@
         "mcp-remote",
         "https://mcp.exa.ai/mcp"
       ],
-      "lifecycle": "lazy"
+      "exposure": "codemode"
+    },
+    "slack": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@iflow-mcp/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "{{ onepasswordRead "op://Personal/Slack Bot Token/credential" }}",
+        "SLACK_TEAM_ID": "T073G9UJPML"
+      },
+      "exposure": "codemode"
+    },
+    "circleback": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.circleback.ai/mcp"
+      ],
+      "exposure": "codemode"
+    },
+    "gmail": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@hachiai/mcp-gmail"
+      ],
+      "exposure": "codemode"
+    },
+    "google_calendar": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cocal/google-calendar-mcp"
+      ],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "{{ .chezmoi.homeDir }}/.config/google-calendar-mcp/gcp-oauth.keys.json"
+      },
+      "exposure": "codemode"
+    },
+    "blender": {
+      "command": "uvx",
+      "args": [
+        "blender-mcp"
+      ],
+      "exposure": "codemode",
+      "timeout": 600.0
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "exposure": "codemode",
+      "timeout": 600.0
+    },
+    "youtube": {
+      "command": "{{ .chezmoi.homeDir }}/.cargo/bin/mcp-server-youtube",
+      "args": [],
+      "env": {
+        "YOUTUBE_API_KEY": "{{ onepasswordRead "op://Personal/YouTube API Key/credential" }}"
+      },
+      "exposure": "codemode",
+      "timeout": 600.0
+    },
+    "zvec_grep": {
+      "command": "zg",
+      "args": [
+        "server",
+        "--stdio"
+      ],
+      "exposure": "codemode",
+      "timeout": 600.0
+    },
+    "honeycomb": {
+      "url": "https://mcp.honeycomb.io/mcp",
+      "exposure": "codemode"
     }
   }
 }

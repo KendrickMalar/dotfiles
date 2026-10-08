@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# pi をアカウント別の設定フォルダで起動する。
+# 共有元は ~/.pi/agent（= pi-kuno / 素の pi）。認証とMCPの実行時状態はプロファイル別に保持する。
+# 使い方: pi-account <muu|rbx|kuno> [pi の引数...]
+set -euo pipefail
+
+name="${1:-}"; shift || true
+master="$HOME/.pi/agent"
+
+case "$name" in
+  kuno) dir="$master" ;;
+  muu|rbx) dir="$HOME/.pi/agent-$name" ;;
+  *) echo "usage: pi-account <muu|rbx|kuno> [args...]" >&2; exit 2 ;;
+esac
+
+launch_pi() {
+  if [[ "${PI_PROFILE_LAUNCHER:-1}" == "0" ]]; then
+    exec pi "$@"
+  fi
+  command -v pi-profile >/dev/null 2>&1 || { echo 'pi-account: pi-profile launcher is missing; use PI_PROFILE_LAUNCHER=0 for the old path' >&2; exit 127; }
+  exec pi-profile launch -- "$@"
+}
+
+pi-extension-deps-patch
+[[ "$name" == "kuno" ]] && launch_pi "$@"
+
+pi-hermes-realpath-patch || true
+
+mkdir -p "$dir"
+chmod 700 "$dir"
+
+# 共有元に増えた設定へ symlink を足す。MCP状態はrename保存でリンクが置き換わるため共有しない。
+shopt -s dotglob nullglob
+for src in "$master"/*; do
+  base="$(basename "$src")"
+  case "$base" in
+    auth.json|mcp-cache.json|mcp-npx-cache.json|mcp-project-approvals.json) continue ;;
+  esac
+  dst="$dir/$base"
+  if [[ -L "$dst" ]]; then
+    continue
+  elif [[ -e "$dst" ]]; then
+    # pi が上書き保存で symlink を実ファイルに置き換えた場合など
+    echo "pi-account: $dst が共有されていません（実ファイル）。確認してください" >&2
+  else
+    ln -s "$src" "$dst"
+  fi
+done
+
+# 共有元から消えたもののリンク切れを掃除
+for dst in "$dir"/*; do
+  [[ -L "$dst" && ! -e "$dst" ]] && rm "$dst"
+done
+
+export PI_CODING_AGENT_DIR="$dir"
+launch_pi "$@"

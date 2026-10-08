@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# pi-hermes-memory が session_files を見かけのパスで記録する問題の修正を当てる（何度実行しても同じ結果）。
+# pi-muu / pi-rbx は sessions を ~/.pi/agent への symlink 経由で見るため、
+# 実パスに揃えないと同じセッションを別ファイル扱いして起動のたびに再走査する。
+# npm 更新で元に戻るので、pi-account が起動のたびに呼ぶ。
+set -euo pipefail
+f="$HOME/.pi/agent/npm/node_modules/pi-hermes-memory/src/store/session-indexer.ts"
+[[ -f "$f" ]] || exit 0
+before='return { path: filePath, size: stat.size, mtimeMs: Math.trunc(stat.mtimeMs) };'
+after='return { path: fs.realpathSync(filePath), size: stat.size, mtimeMs: Math.trunc(stat.mtimeMs) }; // local patch: pi-hermes-realpath-patch'
+grep -qF "$after" "$f" && exit 0
+if grep -qF "$before" "$f"; then
+  python3 - "$f" "$before" "$after" <<'PY'
+import sys
+p, b, a = sys.argv[1:]
+s = open(p, encoding="utf-8").read()
+open(p, "w", encoding="utf-8").write(s.replace(b, a, 1))
+PY
+else
+  echo "pi-hermes-realpath-patch: 対象行が見つかりません（pi-hermes-memory の更新で変わった可能性）" >&2
+fi

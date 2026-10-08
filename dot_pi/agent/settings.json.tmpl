@@ -1,0 +1,105 @@
+{
+  "extensions": [
+    "+builtin:codemode"
+  ],
+  "defaultTools": [
+    "+codemode"
+  ],
+  "lastChangelogVersion": "1.1.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-luna",
+  "packages": [
+    "npm:claude-agent-sdk-pi",
+    "npm:pi-ask-user",
+    "npm:@coctostan/pi-exa-gh-web-tools",
+    "git:github.com/pasky/chrome-cdp-skill@v1.0.1",
+    "git:github.com/leblancfg/pi-ansi-themes",
+    "npm:pi-poly-notify",
+    "{{ .chezmoi.homeDir }}/Documents/Github/pi-plan-mode",
+    {
+      "source": "~/.my-pi",
+      "extensions": [
+        "!extensions/plannotator-superpowers-bridge.ts",
+        "!extensions/startup-profile/index.ts"
+      ]
+    },
+    {
+      "source": "~/Documents/Github/pi-profile"
+    },
+    "npm:pi-hermes-memory",
+    "npm:pi-hashline-edit-pro",
+    "npm:pi-lens",
+    "npm:@piex-dev/dap",
+    "npm:@schovest/pi-goal",
+    "npm:@davidroman/pi-loop",
+    "npm:pi-subagents",
+    "npm:pi-filler",
+    "npm:@335g/pi-autocommit",
+    "npm:pi-pr-review",
+    "npm:@georgedong32/pi-review",
+    "npm:pi-claude-marketplace",
+    "npm:@giuseppe.trisciuoglio/pi-rules",
+    {
+      "source": "git:github.com/danecando/pi-codex-computer-use@3b00bd4829ccdb0b9797b4101743dd9e883b4e7d",
+      "extensions": [],
+      "skills": []
+    },
+    {
+      "source": "npm:pi-deep-research@0.4.1",
+      "extensions": [],
+      "skills": [],
+      "prompts": []
+    },
+    "pi-deep-research-exa",
+    "git:github.com/obra/superpowers@v6.4.2",
+    "npm:@injaneity/pi-computer-use@0.5.1"
+  ],
+  "skills": [
+    "!{{ .chezmoi.homeDir }}/.agents/skills/using-git-worktrees/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.agents/skills/writing-plans/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.agents/skills/subagent-driven-development/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/using-git-worktrees/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/writing-plans/SKILL.md",
+    "!{{ .chezmoi.homeDir }}/.pi/agent*/skills/subagent-driven-development/SKILL.md"
+  ],
+  "compaction": {
+    "enabled": true,
+    "modelOverrides": {
+      "openai-codex/gpt-6-astra": {
+        "reserveTokens": 100000
+      },
+      "openai-codex/gpt-6-sol": {
+        "reserveTokens": 100000
+      },
+      "openai-codex/gpt-6-luna": {
+        "reserveTokens": 100000
+      },
+      "openai-codex/gpt-5.6-sol": {
+        "reserveTokens": 100000
+      },
+      "openai-codex/gpt-5.6-terra": {
+        "reserveTokens": 100000
+      },
+      "openai-codex/gpt-5.6-luna": {
+        "reserveTokens": 100000
+      }
+    }
+  },
+  "autocompleteMaxVisible": 5,
+  "theme": "ansi-dark",
+  "defaultThinkingLevel": "xhigh",
+  "hideThinkingBlock": true,
+  "quietStartup": true,
+  "collapseChangelog": true,
+  "treeFilterMode": "default",
+  "showHardwareCursor": false,
+  "editorPaddingX": 1,
+  "enabledModels": [
+    "openai-codex/gpt-6-luna",
+    "openai-codex/gpt-6-astra",
+    "openai-codex/gpt-6.1-sol"
+  ],
+  "warnings": {
+    "anthropicExtraUsage": false
+  }
+}

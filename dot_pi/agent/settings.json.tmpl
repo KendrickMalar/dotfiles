@@ -32,7 +32,7 @@
     "npm:@piex-dev/dap",
     "npm:@schovest/pi-goal",
     "npm:@davidroman/pi-loop",
-    "git:github.com/KendrickMalar/pi-subagents@51731b0a773b1e4b6ebbda61f47d5160a17b5009",
+    "git:github.com/KendrickMalar/pi-subagents@535f78a899a23ef3fe0b2171fbee1d8671194c39",
     "npm:pi-filler",
     "npm:@335g/pi-autocommit",
     "npm:pi-pr-review",
@@ -52,7 +52,8 @@
     },
     "pi-deep-research-exa",
     "git:github.com/obra/superpowers@v6.4.2",
-    "npm:@injaneity/pi-computer-use@0.5.1"
+    "npm:@injaneity/pi-computer-use@0.5.1",
+    "git:github.com/KendrickMalar/pi-model-roles@5bdb4fabdcb32fcaa8f915e2bdc0127cd549501d"
   ],
   "skills": [
     "!{{ .chezmoi.homeDir }}/.agents/skills/using-git-worktrees/SKILL.md",
@@ -101,5 +102,16 @@
   ],
   "warnings": {
     "anthropicExtraUsage": false
-  }
+  },
+  "modelRoles": {
+    "smol": "openai-codex/gpt-6-luna:low",
+    "default": "openai-codex/gpt-6-luna:xhigh",
+    "slow": "openai-codex/gpt-6.1-sol:high",
+    "task": "openai-codex/gpt-6.1-sol:xhigh"
+  },
+  "modelRoleCycle": [
+    "smol",
+    "default",
+    "slow"
+  ]
 }

@@ -1,0 +1,25 @@
+{
+  "name": "pi-deep-research-exa-local",
+  "private": true,
+  "version": "0.4.1",
+  "description": "Exa-compatible adaptation of pi-deep-research 0.4.1",
+  "pi": {
+    "extensions": [
+      "./extensions/checkpoint.ts"
+    ],
+    "skills": [
+      "./pi-deep-research"
+    ],
+    "prompts": [
+      "./prompts/research.md"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.87.1",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "@sinclair/typebox": "*"
+  }
+}

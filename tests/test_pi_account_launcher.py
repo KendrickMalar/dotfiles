@@ -25,7 +25,10 @@ class AccountLauncher(unittest.TestCase):
   for account in ("muu","rbx"):
    with self.subTest(account=account), tempfile.TemporaryDirectory(prefix="account-state-") as directory:
     root=pathlib.Path(directory);bin=root/"bin";bin.mkdir();agent=root/".pi/agent";profile=root/(".pi/agent-"+account)
-    for base in (agent,profile):(base/"sessions").mkdir(parents=True);(base/"pi-subagents").mkdir();(base/"models-store.json").write_text("{}")
+    local=("sessions","pi-subagents","missions","mcp-home","models-store.json","mcp-auth.json")
+    for base in (agent,profile):
+     base.mkdir(parents=True)
+     for name in local:(base/name).write_text("{}") if name.endswith(".json") else (base/name).mkdir()
     (agent/"settings.json").write_text("{}")
     for name in ("pi","pi-profile","pi-extension-deps-patch","pi-hermes-realpath-patch"):
      file=bin/name;file.write_text("#!/bin/sh\nexit 0\n");file.chmod(0o755)
@@ -33,7 +36,7 @@ class AccountLauncher(unittest.TestCase):
     self.assertEqual(result.returncode,0,result.stderr)
     self.assertEqual(result.stderr,"")
     self.assertTrue((profile/"settings.json").is_symlink())
-    for base in ("sessions","pi-subagents","models-store.json"):self.assertFalse((profile/base).is_symlink(),base)
+    for name in local:self.assertFalse((profile/name).is_symlink(),name)
    with self.subTest(account=account,fresh=True), tempfile.TemporaryDirectory(prefix="account-fresh-") as directory:
     root=pathlib.Path(directory);bin=root/"bin";bin.mkdir();agent=root/".pi/agent";(agent/"sessions").mkdir(parents=True);(agent/"settings.json").write_text("{}")
     for name in ("pi","pi-profile","pi-extension-deps-patch","pi-hermes-realpath-patch"):

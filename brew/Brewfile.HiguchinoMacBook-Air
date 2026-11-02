@@ -4,7 +4,7 @@ tap "oven-sh/bun", trusted: { formulae: ["bun"] }
 tap "rjyo/moshi", trusted: true
 tap "steipete/tap"
 tap "tanabee/tap"
-tap "vjeantet/tap", trusted: { formulae: ["alerter"] }
+tap "vjeantet/tap"
 # Simple, modern, secure file encryption
 brew "age"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -75,6 +75,8 @@ brew "zellij"
 brew "rjyo/moshi/moshi-hook"
 # Keep your Mac awake even with the lid closed
 brew "tanabee/tap/awake", trusted: true
+# macOS notification CLI — send native notifications and capture user interactions
+brew "vjeantet/tap/alerter", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -92,7 +94,8 @@ cask "gcloud-cli"
 cask "ghostty"
 # 2D and 3D game engine
 cask "godot"
-cask "muxy-app/tap/muxy"
+# Terminal multiplexer
+cask "muxy-app/tap/muxy", trusted: true
 uv "gdtoolkit"
 uv "ruff"
 npm "@earendil-works/pi-coding-agent"

@@ -63,12 +63,16 @@ brew "rbenv"
 brew "ripgrep"
 # Editor of encrypted files
 brew "sops"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
 # Terminal multiplexer
 brew "tmux"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # Portable daemon + CLI that bridges AI coding agents to the Moshi mobile app

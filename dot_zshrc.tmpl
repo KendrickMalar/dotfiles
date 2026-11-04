@@ -36,8 +36,6 @@ export EXA_API_KEY="{{ onepasswordRead "op://Personal/Exa API Key/credential" }}
 # finn(既定): 通常どおり `claude` で起動
 # 2つ目アカウント: `claude-personal`
 alias claude-personal='claude-profile -P personal'
-# personal + 権限スキップ: `cw`
-alias cw='claude-personal --dangerously-skip-permissions'
 
 # マシン固有の設定（dotfiles では管理しない）
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

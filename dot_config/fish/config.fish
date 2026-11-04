@@ -122,7 +122,7 @@ alias chrome='chrome-debug'
 # finn(既定): 通常どおり `claude` で起動
 # 2つ目アカウント: `claude-personal`
 alias claude-personal='claude-profile -P personal'
-# c / cw: 引数なしの対話起動で Profile（なし／Development）を選ぶ。定義は claude-scaffold 側
+# c: 引数なしの対話起動で Profile（なし／Development）を選ぶ。定義は claude-scaffold 側
 test -f ~/Documents/Github/claude-scaffold/shell/c.fish; and source ~/Documents/Github/claude-scaffold/shell/c.fish
 
 # Letta: resume Finn
